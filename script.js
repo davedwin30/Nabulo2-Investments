@@ -1,22 +1,18 @@
 const productData = [
-  { name: "Fortified maize flour", detail: "2 kg family pack", price: 6500, category: "Pantry", image: "🌽", tone: "yellow" },
-  { name: "Premium rice", detail: "5 kg household pack", price: 24500, category: "Pantry", image: "🍚", tone: "cream" },
-  { name: "Sunflower cooking oil", detail: "3 litre bottle", price: 28500, category: "Pantry", image: "🫗", tone: "green" },
-  { name: "Laundry soap bundle", detail: "4 × 500 g bars", price: 12000, category: "Household", image: "🧼", tone: "yellow" },
-  { name: "School exercise books", detail: "10 book bundle", price: 15000, category: "Scholastics", image: "📒", tone: "cream" },
-  { name: "Assorted sweets", detail: "Mixed counter pack", price: 8000, category: "Sweets", image: "🍬", tone: "green" },
-  { name: "Fresh market basket", detail: "Seasonal grocery mix", price: 18000, category: "Groceries", image: "🥬", tone: "yellow" },
-  { name: "Toilet tissue", detail: "10 roll value pack", price: 14000, category: "Household", image: "🧻", tone: "cream" },
+  { name: "Fortified maize flour", detail: "2 kg family pack", category: "Pantry", image: "🌽", tone: "yellow" },
+  { name: "Premium rice", detail: "5 kg household pack", category: "Pantry", image: "🍚", tone: "cream" },
+  { name: "Sunflower cooking oil", detail: "3 litre bottle", category: "Pantry", image: "🫗", tone: "green" },
+  { name: "Laundry soap bundle", detail: "4 × 500 g bars", category: "Household", image: "🧼", tone: "yellow" },
+  { name: "School exercise books", detail: "10 book bundle", category: "Scholastics", image: "📒", tone: "cream" },
+  { name: "Assorted sweets", detail: "Mixed counter pack", category: "Sweets", image: "🍬", tone: "green" },
+  { name: "Fresh market basket", detail: "Seasonal grocery mix", category: "Groceries", image: "🥬", tone: "yellow" },
+  { name: "Toilet tissue", detail: "10 roll value pack", category: "Household", image: "🧻", tone: "cream" },
 ];
 
 const categories = ["All goods", "Household", "Pantry", "Scholastics", "Groceries", "Sweets"];
 
 let activeCategory = "All goods";
 let searchQuery = "";
-
-function formatMoney(value) {
-  return `UGX ${value.toLocaleString("en-UG")}`;
-}
 
 const iconChevronRight = `<svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="m9 18 6-6-6-6"/></svg>`;
 const iconArrowUpRight = `<svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M7 7h10v10"/><path d="M7 17 17 7"/></svg>`;
@@ -70,7 +66,6 @@ function renderProducts() {
             <h3>${product.name}</h3>
             <p>${product.detail}</p>
             <div class="product-bottom">
-              <strong>${formatMoney(product.price)}</strong>
               <button class="enquire-btn" data-item="${product.name}" aria-label="Enquire about ${product.name}">
                 ${iconArrowUpRight}
               </button>
